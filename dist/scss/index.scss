@@ -1,0 +1,189 @@
+/* 工具样式 */
+
+a {
+    text-decoration: none;
+    color: #999;
+}
+
+@mixin line() {
+    content: "|";
+    margin-left: 7px;
+    margin-right: 7px;
+    color: #3b423b;
+}
+
+
+/* start 广告css */
+
+.ad {
+    display: block;
+    width: 100%;
+    height: 120px;
+    background-image: url(../images/bg.jpg);
+    background-position: center center;
+}
+
+
+/* end 广告css */
+
+
+/* start 头部导航 */
+
+.container {
+    width: 100%;
+    height: 40px;
+    background-color: #333;
+    .wrap {
+        width: 1226px;
+        margin: 0 auto;
+        line-height: 40px;
+        font-size: 12px;
+        .wrap-left {
+            li {
+                float: left;
+                &::after {
+                    @include line();
+                }
+                &:last-child::after {
+                    content: "";
+                }
+                a:hover {
+                    color: #fff;
+                }
+            }
+        }
+        .wrap-right {
+            width: 280px;
+            float: right;
+            .login {
+                float: left;
+                li {
+                    float: left;
+                    &::after {
+                        @include line();
+                    }
+                    &:last-child::after {
+                        content: "";
+                    }
+                }
+            }
+            .cart {
+                position: relative;
+                float: left;
+                width: 122px;
+                height: 40px;
+                text-align: center;
+                color: #ddd;
+                background-color: #424242;
+                .cart-block {
+                    position: absolute;
+                    top: 40px;
+                    right: 0;
+                    z-index: 10;
+                    display: none;
+                    width: 250px;
+                    height: 0;
+                    background-color: #fff;
+                    box-shadow: 0px 8px 8px 5px #ddd;
+                    transition: all 2s;
+                }
+                &:hover {
+                    color: orange;
+                    background-color: #fff;
+                    .cart-block {
+                        display: block;
+                        height: 100px;
+                        line-height: 100px;
+                    }
+                }
+            }
+        }
+        .nav {
+            clear: both;
+            height: 100px;
+            line-height: 100px;
+            .nav-logo {
+                float: left;
+                .logo {
+                    display: inline-block;
+                    width: 49px;
+                    height: 49px;
+                    vertical-align: middle;
+                    background-color: orange;
+                    background-image: url(../images/mi-logo.png);
+                }
+                .gif-ad {
+                    display: inline-block;
+                    width: 180px;
+                    height: 66px;
+                    vertical-align: middle;
+                    background-image: url(../images/yyymix.gif);
+                }
+            }
+            .nav-link {
+                float: left;
+                font-size: 16px;
+                li {
+                    float: left;
+                    margin-right: 18px;
+                    a {
+                        color: #333;
+                        &:hover {
+                            color: orange;
+                        }
+                    }
+                }
+            }
+            .nav-search {
+                float: right;
+                position: relative;
+                display: inline-block;
+                width: 296px;
+                height: 50px;
+                padding-left: 6px;
+                margin-top: 26px;
+                border: 1px solid #ddd;
+                input {
+                    position: absolute;
+                    top: 0;
+                    width: 246px;
+                    height: 48px;
+                    font-size: 14px;
+                    border: 0;
+                    outline: 0;
+                    /* 兄弟选择器当 input被聚焦的时候，让身后的所有的span兄弟元素全部隐藏 */
+                    &:focus ~ span {
+                        display: none;
+                    }
+                }
+                > span {
+                    position: absolute;
+                    top: 16px;
+                    padding: 3px 5px;
+                    line-height: 1;
+                    color: #333;
+                    background-color: #ddd;
+                }
+                .key-one {
+                    left: 100px;
+                }
+                .key-two {
+                    left: 150px;
+                }
+                .search-box {
+                    position: absolute;
+                    top: 0;
+                    right: 0;
+                    width: 50px;
+                    height: 50px;
+                    line-height: 50px;
+                    text-align: center;
+                    border-left: 1px solid #ddd;
+                }
+            }
+        }
+    }
+}
+
+
+/* end 头部导航 */

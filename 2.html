@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    .box {
+        /*第一种方法：清楚浮动*/
+        /*overflow: hidden;*/
+        width: 500px;
+        border: 1px solid red;
+    }
+    
+    .box::after {
+        /*第二种方法：清除浮动*/
+        /*content: "";
+        display: block;
+        clear: both;*/
+    }
+    
+    .a {
+        float: left;
+        width: 100px;
+        height: 100px;
+        background-color: #ddd;
+    }
+    </style>
+</head>
+
+<body>
+    <div class="box">
+        <div class="a"></div>
+        <div class="a"></div>
+        <div class="a"></div>
+    </div>
+</body>
+
+</html>

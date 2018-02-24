@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+    span {
+        /*display: block;*/
+        /*给内联元素浮动/绝对定位/固定定位之后，内联就变味了内联块状*/
+        /*position: fixed;*/
+        float: left;
+        width: 500px;
+        height: 500px;
+        background-color: #ddd;
+    }
+    /*
+        元素分类：
+        块状：h3 p ul li table dl dt dd header nav ...
+            独占一行，可以设置宽高
+        内联:span a b i em strong
+            多大占据多大的空间
+        内联块状：img input
+            和其他元素在同一行，还可以设置宽高
+    */
+    </style>
+</head>
+
+<body>
+    <span>hello world</span>
+    <em>测试</em>
+    <img src="dist/images/1.jpg" width="200" alt="">
+    <span>hello 图片</span>
+</body>
+
+</html>
